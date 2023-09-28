@@ -5,10 +5,15 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from '@/pages/home'
 import Contact from '@/pages/contact'
 import { Spinner } from '@/components/ui'
+import PageLogin from '@/pages/login'
 
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <PageLogin />
+  },
+  {
+    path: '/home',
     element: <Home />
   },
   {
