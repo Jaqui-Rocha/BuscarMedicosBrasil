@@ -3,19 +3,12 @@ import Input from '@/components/ui/uiForm/input'
 import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai'
 import { Container, Global, BemVindo } from '@/assets/global'
 import { BackGround1 } from '@/components/loginComponents/style'
-import Login from '../assets/Login.png'
-import {
-  FormGroup,
-  FormControlLabel,
-  Checkbox,
-  ButtonGroup
-} from '@mui/material'
-import styleInput from '@/components/ui/uiForm/styleInput'
-import StyleInput from '@/components/ui/uiForm/styleInput'
+import { FormGroup, FormControlLabel, Checkbox } from '@mui/material'
+
 import { StyleCheck } from '@/components/ui/uiForm/styleMaterial'
 import { Button } from '@/components/ui/uiForm/button'
 import { useNavigate } from 'react-router-dom'
-import { BackHandOutlined } from '@mui/icons-material'
+
 function PageLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')

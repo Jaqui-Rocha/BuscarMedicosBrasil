@@ -12,6 +12,10 @@ export const Global = createGlobalStyle`
 
 
 `
+export const StyleHome = styled.div`
+  display: flex;
+  flex-direction: row;
+`
 export const BemVindo = styled.div`
   font-family: 'Sora', sans-serif;
   margin-left: 6.5rem;
