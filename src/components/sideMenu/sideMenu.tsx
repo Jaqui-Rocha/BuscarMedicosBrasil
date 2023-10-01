@@ -1,13 +1,12 @@
 import { NavLink, Container, Image } from './styleSideMenu'
 import Logo from '../../assets/LogoBuscarMedicosBrasil.png'
-import usersThree from '../../assets/icons/users-three.svg'
-import dollar from '../../assets/icons/dollar.svg'
-import pawCodeTwo from '../../assets/icons/pay-code-two.svg'
-import remind from '../../assets/icons/remind.svg'
-import help from '../../assets/icons/help.svg'
-import { IconSideMenu } from './styleSideMenu'
 import Especialidades from '../Icons/especialidades'
 import Dashboard from '../Icons/dashboard'
+import UsuariosCadastrados from '../Icons/usuariosCadastrados'
+import Planos from '../Icons/planos'
+import Pagamentos from '../Icons/pagamentos'
+import Notificacoes from '../Icons/notificacoes'
+import Faq from '../Icons/faq'
 export const SideMenu: React.FC = () => {
   return (
     <>
@@ -17,10 +16,16 @@ export const SideMenu: React.FC = () => {
           <Dashboard />
           Dashboard
         </NavLink>
-        <NavLink to="">Usuários cadastrados</NavLink>
-        <NavLink to="">Planos</NavLink>
         <NavLink to="">
-          <IconSideMenu src={pawCodeTwo} />
+          <UsuariosCadastrados />
+          Usuários cadastrados
+        </NavLink>
+        <NavLink to="">
+          <Planos />
+          Planos
+        </NavLink>
+        <NavLink to="">
+          <Pagamentos />
           Pagamentos
         </NavLink>
         <NavLink to="">
@@ -28,11 +33,12 @@ export const SideMenu: React.FC = () => {
           Especialidades
         </NavLink>
         <NavLink to="">
-          <IconSideMenu src={remind} />
+          <Notificacoes />
           Notificações
         </NavLink>
         <NavLink to="">
-          <IconSideMenu src={help} />
+          {' '}
+          <Faq />
           FAQ
         </NavLink>
       </Container>

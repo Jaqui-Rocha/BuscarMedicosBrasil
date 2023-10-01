@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import Drawer from '@mui/material/Drawer'
+
 export const NavLink = styled(Link)`
   background: #046639;
   color: white;
@@ -13,11 +13,13 @@ export const NavLink = styled(Link)`
   font-size: 1em;
   width: 90%;
   text-decoration: none;
+  gap: 3px;
 
   &:hover,
   :focus {
     color: #046639;
     background-color: #b4e08e;
+
     path {
       stroke: #046639;
     }
@@ -36,25 +38,22 @@ export const Container = styled.div`
 export const Image = styled.img`
   size: 100%;
 `
-export const IconSideMenu = styled.img`
-  width: 24px;
-  height: 24px;
-  //color: white;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  //stroke: #fff;
-  &:hover,
-  :focus {
-    background: #b4e08e;
-    color: #046639;
-    //stroke: #046639;
-  }
-`
+
 export const Dashboard = styled.div`
   fill: #fff;
   stroke: #046639;
   &:hover:focus {
     fill: #040404;
     stroke: #fff;
+  }
+`
+export const UsuariosCadastrados = styled.div`
+  fill: #fff;
+
+  &:hover:focus {
+    fill: #040404;
+    path {
+      stroke: #046639;
+    }
   }
 `
