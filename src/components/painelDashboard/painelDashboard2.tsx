@@ -1,9 +1,10 @@
-type Variaveis = 'medicos' | 'contratantes'
-function PainelDashboard2(props: Variaveis) {
-  const Médicos = 'medicos'
+import { Circle } from './componentsIcons/styleComponentsIcons'
+
+const PainelDashboard2 = () => {
   return (
     <div>
       <div>
+        <Circle />
         <img src="" />
       </div>
       <span />
