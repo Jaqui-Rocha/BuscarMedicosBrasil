@@ -27,7 +27,7 @@ export const NavLink = styled(Link)`
 `
 export const Container = styled.div`
   background: #046639;
-  width: 15%;
+  width: 15vw;
   height: 100vh;
   display: flex;
   flex-direction: column;

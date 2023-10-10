@@ -12,11 +12,11 @@ export const SideMenu: React.FC = () => {
     <>
       <Container>
         <Image src={Logo} />
-        <NavLink to="">
+        <NavLink to="/Layout">
           <Dashboard />
           Dashboard
         </NavLink>
-        <NavLink to="">
+        <NavLink to="/Layout/2">
           <UsuariosCadastrados />
           Usuários cadastrados
         </NavLink>

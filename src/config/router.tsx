@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 // PAGES
-import Home from '@/pages/home'
+import Home from '@/pages/home/home'
 import Contact from '@/pages/contact'
 import { Spinner } from '@/components/ui'
 import PageLogin from '@/pages/login'

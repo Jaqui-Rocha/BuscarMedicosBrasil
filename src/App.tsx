@@ -1,14 +1,21 @@
-import SideMenu from './components/sideMenu/sideMenu'
-import Router from './config/router'
-import GlobalStyles from '@/assets/styles/global-styles'
+import BaseLayout from './pages/baseLayout'
 
+import PageLogin from './pages/login'
+import Home from './pages/home/home'
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Contact from './pages/contact'
 function App() {
   return (
-    <>
-      <GlobalStyles />
-
-      <Router />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PageLogin />} />
+        <Route path="/Layout" element={<BaseLayout />}>
+          <Route path="/Layout" element={<Home />} />
+          <Route path="2" element={<Contact />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

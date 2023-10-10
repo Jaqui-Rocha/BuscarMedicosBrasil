@@ -16,11 +16,17 @@ export default createGlobalStyle`
 
   html {
     font-size: 16px;
+    /* display:flex;
+    flex-direction: column; */
   }
 
   body, input, select, textarea {
     font-size: 1rem;
     color: var(--dark);
   }
+body{
+  font-family: 'Poppins', sans-serif;
+  
+}
 
 `

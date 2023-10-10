@@ -1,12 +1,13 @@
 import styled from 'styled-components'
-export const Circle = styled.div`
-  border-radius: 25px;
+export const Circle = styled.div<{ color: string }>`
+  border-radius: 50px;
   width: 80px;
   height: 80px;
-  background: #004ce8;
+  background: ${({ color }) => color};
   position: relative;
 `
-export const StyleUsuariosCadastrados = styled.div`
+export const ImageIcon = styled.img`
   position: absolute;
-  color: white;
+  left: 1.1em;
+  top: 1.1em;
 `

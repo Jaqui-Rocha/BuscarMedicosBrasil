@@ -3,10 +3,10 @@ import { Circle, ImageIcon } from './componentsIcons/styleComponentsIcons'
 import users from '../../assets/icons/user.png'
 import { ContainerDash2, DisplayFlex, Gap } from './stylepainelDashboard2'
 
-const PainelDashboard2 = () => {
+const PainelDashboard3 = () => {
   return (
     <ContainerDash2 color={colors.white}>
-      <h2>Médicos</h2>
+      <h2>Contratantes</h2>
       <DisplayFlex>
         <DisplayFlex>
           <Circle color={colors.blue}>
@@ -22,7 +22,7 @@ const PainelDashboard2 = () => {
             <ImageIcon src={users} />
           </Circle>
           <Gap>
-            <h4>Disponíveis</h4>
+            <h4>Ativos</h4>
             <h1>900</h1>
           </Gap>
         </DisplayFlex>
@@ -31,7 +31,7 @@ const PainelDashboard2 = () => {
             <ImageIcon src={users} />
           </Circle>
           <Gap>
-            <h4>Indisponíveis</h4>
+            <h4>Inativos</h4>
             <h1>100</h1>
           </Gap>
         </DisplayFlex>
@@ -39,4 +39,4 @@ const PainelDashboard2 = () => {
     </ContainerDash2>
   )
 }
-export default PainelDashboard2
+export default PainelDashboard3

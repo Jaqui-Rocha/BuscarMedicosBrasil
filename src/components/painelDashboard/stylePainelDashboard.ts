@@ -7,6 +7,7 @@ export const Container = styled.div`
   border-radius: 18px;
   padding: 1em;
   margin: 2em;
+  position: relative;
 `
 export const Container2 = styled.div`
   width: 18vw;
@@ -38,6 +39,6 @@ export const ImageElipse = styled.img`
 `
 export const ImageAvatar = styled.img`
   position: absolute;
-  left: 40em;
-  top: 3.8em;
+  left: 19em;
+  top: 1.5;
 `
