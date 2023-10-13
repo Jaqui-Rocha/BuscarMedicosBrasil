@@ -13,7 +13,7 @@ export const Table = styled.table`
 `
 
 export const Header = styled.thead`
-  background-color: #046639;
+  /* background-color: #046639; */
   color: white;
   font-family: 'Poppins';
   font-size: 16px;

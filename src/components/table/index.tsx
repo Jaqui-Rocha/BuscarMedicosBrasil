@@ -1,34 +1,40 @@
 import { ReactNode } from 'react'
-import * as S from './styleTable'
+import { Table } from './styleTable'
 
-type TableRow = Record<string, string | number | ReactNode>
+type TableRow = Record<string, string | number | Array<string> | ReactNode>
 
 type TableProps = {
-  columns: string[]
-  data: TableRow[]
+  HeadColumns: string[]
+  BodyRow: TableRow[]
 }
 
-const Table = ({ columns, data }: TableProps) => {
+export const TableComponent = ({ HeadColumns, BodyRow }: TableProps) => {
   return (
-    <S.Table>
-      <S.Header>
-        <tr>
-          {columns.map(columnText => (
-            <S.HeaderData>{columnText}</S.HeaderData>
-          ))}
-        </tr>
-      </S.Header>
-      <tbody>
-        {data.map(information => (
+    <>
+      <Table>
+        <thead>
           <tr>
-            {Object.values(information).map(cell => (
-              <td>{cell}</td>
+            {HeadColumns.map((columnText, index) => (
+              <th key={`${index}-th`}>{columnText}</th>
             ))}
           </tr>
-        ))}
-      </tbody>
-    </S.Table>
+        </thead>
+        <tbody>
+          {BodyRow.map((information, index) => {
+            return (
+              <>
+                <tr key={`${index}-tr`}>
+                  {Object.values(information).map((cell, index) => (
+                    <>
+                      <td key={`${index}-td`}>{cell}</td>
+                    </>
+                  ))}
+                </tr>
+              </>
+            )
+          })}
+        </tbody>
+      </Table>
+    </>
   )
 }
-
-export default Table
