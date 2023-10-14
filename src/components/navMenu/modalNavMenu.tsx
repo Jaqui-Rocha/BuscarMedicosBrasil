@@ -6,12 +6,13 @@ import { Link } from 'react-router-dom'
 import modalProfile from '../../assets/icons/modalProfile.png'
 
 import { ImgProfile, ImgUser, Imglinha, ImgLogout } from './styledNavMenu'
+
 export const ModalNavMenu: React.FC = () => {
   return (
     <>
       <div>
         <ImgProfile src={modalProfile} />
-        <Link to="">
+        <Link to="#">
           <ImgUser src={modalUser} />
         </Link>
         <Imglinha src={linhaModal} />

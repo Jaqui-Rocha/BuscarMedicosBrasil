@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 export const ContainerDash2 = styled.div<{ color: string }>`
   background: ${({ color }) => color};
   width: 47vw;
@@ -20,4 +21,12 @@ export const DisplayFlex = styled.div`
 export const Gap = styled.div`
   gap: 2em;
   margin-left: 1em;
+`
+export const ProfileLink = styled(Link)`
+  text-decoration: none;
+`
+export const DFlex = styled.div`
+  display: flex;
+
+  justify-content: space-between;
 `

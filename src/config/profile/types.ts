@@ -1,16 +1,14 @@
-type profileProps = [
-  {
-    id: number
-    email: string
-    firstName: string
-    lastName: string
-    profiles: [
-      {
-        id: number
-        name: string
-        authority: string
-      }
-    ]
-    enabled: boolean
-  }
-]
+export interface ProfileProps {
+  id: number
+  email: string
+  firstName: string
+  lastName: string
+  profiles: Profile[]
+  enabled: boolean
+}
+
+export interface Profile {
+  id: number
+  name: string
+  authority: string
+}
