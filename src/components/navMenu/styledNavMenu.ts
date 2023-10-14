@@ -16,3 +16,26 @@ export const Base = styled.div`
   flex-direction: column;
   width: 100vw;
 `
+export const ImgProfile = styled.img`
+  position: absolute;
+  right: 1.5em;
+  z-index: 1;
+`
+export const ImgUser = styled.img`
+  position: absolute;
+  right: 3em;
+  top: 9em;
+  z-index: 2;
+`
+export const ImgLogout = styled.img`
+  position: absolute;
+  right: 3em;
+  top: 13em;
+  z-index: 2;
+`
+export const Imglinha = styled.img`
+  position: absolute;
+  right: 3em;
+  top: 11.5em;
+  z-index: 2;
+`

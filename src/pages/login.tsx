@@ -8,7 +8,7 @@ import { FormGroup, FormControlLabel, Checkbox } from '@mui/material'
 import { StyleCheck } from '@/components/ui/uiForm/styleMaterial'
 import { Button } from '@/components/ui/uiForm/button'
 import { useNavigate } from 'react-router-dom'
-import { login } from '@/config/requisition'
+import { login } from '@/config/login'
 function PageLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
