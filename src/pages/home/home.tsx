@@ -13,7 +13,7 @@ export default function Home() {
           <PainelDashboard3 />
         </div>
       </Container>
-      {/* <Table /> */}
+      <Table />
     </>
   )
 }
