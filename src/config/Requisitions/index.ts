@@ -1,7 +1,13 @@
 import { AxiosResponse, isAxiosError } from 'axios'
 import api from '../api'
 import { instancia } from '../api'
-import { PropsDashbord, PropsUsers } from './types'
+import {
+  PropsDashbord,
+  PropsSpecialties,
+  PropsUsers,
+  Pagination
+} from './types'
+
 export const login = async (email: string, password: string) => {
   try {
     const result = await api.post(
@@ -39,11 +45,84 @@ export const getDashboard = async () => {
   }
 }
 
-export const getUsers = async () => {
+export const getUsers = async (page?: number) => {
   try {
-    const result = await instancia.get<PropsUsers>('users/profile')
+    const result = await instancia.get<PropsUsers>(`users/profile?`, {
+      params: {
+        page,
+        size: 6
+      }
+    })
+
+    return result.data
+  } catch (error) {
+    console.log('Algo deu errado, tente novamente', error)
+    return null
+  }
+}
+export const getSpecialties = async () => {
+  try {
+    const result = await instancia.get<PropsSpecialties>('specialties')
+    return result.data.content
+  } catch (error) {
+    console.log('Algo deu errado, tente novamente', error)
+    return null
+  }
+}
+export const getSpecialtiesId = async (id: number) => {
+  try {
+    const result = await instancia.get<PropsSpecialties>(`specialties/${id}`, {
+      params: {
+        id
+      }
+    })
+    return result.data.content
+  } catch (error) {
+    console.log('Algo deu errado, tente novamente', error)
+    return null
+  }
+}
+export const postSpecialties = async (name: string, enabled: boolean) => {
+  try {
+    const result = await instancia.post<PropsSpecialties>(
+      'specialties',
+      {},
+      {
+        params: {
+          name,
+          enabled
+        }
+      }
+    )
     console.log(result)
-    return result
+    return result.data.content
+  } catch (error) {
+    console.log('Algo deu errado, tente novamente', error)
+    return null
+  }
+}
+export const deleteSpecialties = async (id: number) => {
+  try {
+    const result = await instancia.delete(`specialties/${id}`)
+    return result.data.content
+  } catch (error) {
+    console.log('Algo deu errado, tente novamente', error)
+    return null
+  }
+}
+export const putSpecialties = async (name: string, enabled: boolean) => {
+  try {
+    const result = await instancia.put<PropsSpecialties>(
+      'specialties/{id}',
+      {},
+      {
+        params: {
+          name,
+          enabled
+        }
+      }
+    )
+    return result.data.content
   } catch (error) {
     console.log('Algo deu errado, tente novamente', error)
     return null

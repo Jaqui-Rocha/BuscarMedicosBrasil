@@ -12,11 +12,11 @@ export const ModalNavMenu: React.FC = () => {
     <>
       <div>
         <ImgProfile src={modalProfile} />
-        <Link to="#">
+        <Link to="/Layout/1">
           <ImgUser src={modalUser} />
         </Link>
         <Imglinha src={linhaModal} />
-        <Link to="">
+        <Link to="/">
           <ImgLogout src={SairModal} />
         </Link>
       </div>

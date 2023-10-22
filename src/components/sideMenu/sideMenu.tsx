@@ -1,4 +1,4 @@
-import { NavLink, Container, Image } from './styleSideMenu'
+import { NLink, Container, Image } from './styleSideMenu'
 import Logo from '../../assets/LogoBuscarMedicosBrasil.png'
 import Especialidades from '../Icons/especialidades'
 import Dashboard from '../Icons/dashboard'
@@ -7,40 +7,42 @@ import Planos from '../Icons/planos'
 import Pagamentos from '../Icons/pagamentos'
 import Notificacoes from '../Icons/notificacoes'
 import Faq from '../Icons/faq'
+import Home from '@/pages/home/home'
+import { Outlet } from 'react-router-dom'
 export const SideMenu: React.FC = () => {
   return (
     <>
       <Container>
         <Image src={Logo} />
-        <NavLink to="/Layout">
+        <NLink to="/Layout">
           <Dashboard />
           Dashboard
-        </NavLink>
-        <NavLink to="/Layout/2">
+        </NLink>
+        <NLink to="/Layout/2">
           <UsuariosCadastrados />
           Usuários cadastrados
-        </NavLink>
-        <NavLink to="">
+        </NLink>
+        <NLink to="">
           <Planos />
           Planos
-        </NavLink>
-        <NavLink to="">
+        </NLink>
+        <NLink to="">
           <Pagamentos />
           Pagamentos
-        </NavLink>
-        <NavLink to="">
+        </NLink>
+        <NLink to="/Layout/5">
           <Especialidades fill="currentColor" />
           Especialidades
-        </NavLink>
-        <NavLink to="">
+        </NLink>
+        <NLink to="">
           <Notificacoes />
           Notificações
-        </NavLink>
-        <NavLink to="">
+        </NLink>
+        <NLink to="">
           {' '}
           <Faq />
           FAQ
-        </NavLink>
+        </NLink>
       </Container>
     </>
   )

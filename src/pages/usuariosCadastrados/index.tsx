@@ -1,12 +1,29 @@
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-
+import { PropsUsers } from '@/config/Requisitions/types'
 import 'react-tabs/style/react-tabs.css'
 import { Container, Tab1, Tamanho, H1, Body } from './styled'
-
+import { useState, useEffect } from 'react'
+import { getUsers } from '@/config/Requisitions'
+// type Props<>= todos | contratantes | medicos {}
 export default function UsuarioCadastrado() {
+  const [data, setData] = useState<PropsUsers | null>()
+  useEffect(() => {
+    async function usuarioCadastrado() {
+      try {
+        const resposta = await getUsers()
+        if (data === resposta?.content) {
+          setData(data)
+          console.log(resposta.content)
+        }
+      } catch (error) {
+        console.log('Erro', error)
+      }
+    }
+    usuarioCadastrado()
+  }, [])
   return (
     <Container>
-      <H1>Usuários Cadastrados |</H1>
+      <H1>Usuários Cadastrados |{}</H1>
       <Tabs>
         <TabList>
           <Tab>

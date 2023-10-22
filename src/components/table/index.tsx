@@ -1,8 +1,8 @@
 import { ReactNode } from 'react'
-import { Table } from './styleTable'
+import { Table, Header, HeaderData } from './styleTable'
 
 type TableRow = Record<string, string | number | Array<string> | ReactNode>
-
+type HeadColumns = {}
 type TableProps = {
   HeadColumns: string[]
   BodyRow: TableRow[]
@@ -12,13 +12,13 @@ export const TableComponent = ({ HeadColumns, BodyRow }: TableProps) => {
   return (
     <>
       <Table>
-        <thead>
+        <Header>
           <tr>
             {HeadColumns.map((columnText, index) => (
-              <th key={`${index}-th`}>{columnText}</th>
+              <HeaderData key={`${index}-th`}>{columnText}</HeaderData>
             ))}
           </tr>
-        </thead>
+        </Header>
         <tbody>
           {BodyRow.map((information, index) => {
             return (

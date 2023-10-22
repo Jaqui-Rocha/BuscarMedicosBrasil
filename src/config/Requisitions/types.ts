@@ -63,3 +63,42 @@ export interface PropsUsers {
   }
   empty: boolean
 }
+export type PropsSpecialties = Pagination & {
+  content: {
+    id: number
+    name: string
+    enabled: boolean
+    createdAt: string
+    updatedAt: string
+    createdBy: string | null
+    updatedBy: string | null
+    active: boolean
+  }[]
+}
+export type Pagination = {
+  pageable: {
+    pageNumber: number
+    pageSize: number
+    sort: {
+      empty: boolean
+      sorted: boolean
+      unsorted: boolean
+    }
+    offset: number
+    paged: boolean
+    unpaged: boolean
+  }
+  last: boolean
+  totalPages: number
+  totalElements: number
+  size: number
+  number: number
+  sort: {
+    empty: boolean
+    sorted: boolean
+    unsorted: boolean
+  }
+  first: boolean
+  numberOfElements: number
+  empty: boolean
+}

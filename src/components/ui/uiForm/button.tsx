@@ -15,10 +15,3 @@ export const Button = styled.button<{ $primary?: boolean }>`
   margin-left: ${props => (props.$primary ? '15%' : '60%')};
   margin-right: ${props => (props.$primary ? '15%' : '10%')};
 `
-
-// render(
-//   <div>
-//     <Button>Normal</Button>
-//     <Button $primary>Primary</Button>
-//   </div>
-// );
