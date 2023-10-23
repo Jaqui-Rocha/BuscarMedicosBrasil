@@ -14,7 +14,7 @@ export const Container2 = styled.div`
   height: 20vh;
   padding: 1em;
   position: absolute;
-  top: 14em;
+  top: 12em;
 `
 export const H1 = styled.h1`
   color: white;
@@ -32,7 +32,7 @@ export const Span = styled.span`
   padding: 0.7em;
 `
 export const ImageElipse = styled.img`
-  position: relative;
+  position: absolute;
   // right: 10em;
   left: 16em;
   top: 0.7em;

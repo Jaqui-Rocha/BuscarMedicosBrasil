@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import { colors } from '../theme'
 export const ContainerDash2 = styled.div<{ color: string }>`
   background: ${({ color }) => color};
   width: 47vw;
-  box-shadow: 1px 1px 5px gray;
+  box-shadow: 0px 2px 15px 8px ${colors.gray2};
   //border: 2px solid black;
   border-radius: 18px;
   padding: 1.5em;

@@ -3,10 +3,8 @@ import { colors } from '../theme'
 
 export const Table = styled.table`
   border-collapse: collapse;
-  margin-left: 5em;
-  width: 70vw;
-  //justify-content: center;
-  //align-items: center;
+  margin: 0em 1.5em 0em 1.5em;
+  width: 77.2vw;
 
   th:first-child {
     border-radius: 16px 0px 0px 0px;
@@ -15,15 +13,22 @@ export const Table = styled.table`
   th:last-child {
     border-radius: 0px 16px 0px 0px;
   }
+  th,
+  td {
+    text-align: left;
+  }
+  tr,
+  td {
+    padding-left: 2em;
+  }
+  td {
+    background-color: ${colors.gray1};
+  }
 `
 
 export const Header = styled.thead`
-  /* background-color: #046639; */
   color: white;
   background: ${colors.green1};
-  font-family: 'Poppins';
-  font-size: 16px;
-  font-weight: 600;
 `
 
 export const HeaderData = styled.th`

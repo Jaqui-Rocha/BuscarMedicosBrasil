@@ -63,6 +63,22 @@ export interface PropsUsers {
   }
   empty: boolean
 }
+export type PropsUsers1 = Pagination & {
+  content: {
+    id: number
+    email: string
+    firstName: string
+    lastName: string
+    phone: string
+    city: string
+    name: string
+    state: string
+    profiles: {
+      id: number
+      name: string
+    }[]
+  }[]
+}
 export type PropsSpecialties = Pagination & {
   content: {
     id: number

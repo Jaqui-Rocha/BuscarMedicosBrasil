@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { Table, Header, HeaderData } from './styleTable'
-
-type TableRow = Record<string, string | number | Array<string> | ReactNode>
+//type TableRow = Record<string, string | number | Array<string> | ReactNode>
+type TableRow = string | number | Array<string> | ReactNode
 type HeadColumns = {}
 type TableProps = {
   HeadColumns: string[]

@@ -44,7 +44,22 @@ export const getDashboard = async () => {
     return null
   }
 }
+export const getUsers1 = async () => {
+  try {
+    const result = await instancia.get<PropsUsers>(`users/`, {
+      params: {
+        page: '',
+        size: 6,
+        search: ''
+      }
+    })
 
+    return result.data.content
+  } catch (error) {
+    console.log('Erro', error)
+    return null
+  }
+}
 export const getUsers = async (page?: number) => {
   try {
     const result = await instancia.get<PropsUsers>(`users/profile?`, {
@@ -63,7 +78,7 @@ export const getUsers = async (page?: number) => {
 export const getSpecialties = async () => {
   try {
     const result = await instancia.get<PropsSpecialties>('specialties')
-    return result.data.content
+    return result.data
   } catch (error) {
     console.log('Algo deu errado, tente novamente', error)
     return null

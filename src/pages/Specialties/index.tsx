@@ -9,7 +9,18 @@ import edit from '../../assets/icons/edit.png'
 import delet from '../../assets/icons/delete.png'
 import ModalDelete from '@/components/modal/modalDelete/modalDelete'
 import { Switch } from '@mui/material'
-import { colors } from '@/components/theme'
+import plus from '../../assets/icons/plus.png'
+
+import { Button } from '@/components/ui/uiForm/button'
+
+import { AiOutlineSearch } from 'react-icons/ai'
+import {
+  Centralizar,
+  Search,
+  Search1,
+  Container,
+  Div
+} from './styleSpecialties'
 
 type SpecialtiesRow = {
   name: string
@@ -63,8 +74,23 @@ const Specialties = () => {
 
   return (
     <>
-      <TableComponent HeadColumns={tableColumns} BodyRow={specialties} />
-      {invisible && <ModalDelete id={id} />}
+      <Container>
+        <h1>Especialidades</h1>
+        <Div>
+          <Centralizar>
+            <Search placeholder="Pesquise uma palavra-chave" />
+            <Search1>
+              <AiOutlineSearch />
+            </Search1>
+            <Button>
+              <img src={plus} />
+              <h3>Nova Especialidade</h3>
+            </Button>
+          </Centralizar>
+          <TableComponent HeadColumns={tableColumns} BodyRow={specialties} />
+          {invisible && <ModalDelete id={id} />}
+        </Div>
+      </Container>
     </>
   )
 }
