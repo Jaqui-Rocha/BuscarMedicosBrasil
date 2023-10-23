@@ -11,13 +11,13 @@ export const TableComponent = ({ HeadColumns, BodyRow }: TableProps) => {
   return (
     <>
       <Table>
-        <thead>
+        <Header>
           <tr>
             {HeadColumns.map((columnText, index) => (
               <th key={`${index}-th`}>{columnText}</th>
             ))}
           </tr>
-        </thead>
+        </Header>
         <tbody>
           {BodyRow.map((information, index) => {
             return (
