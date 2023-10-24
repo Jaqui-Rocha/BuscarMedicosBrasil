@@ -34,43 +34,44 @@ const Specialties = () => {
   const tableColumns = ['Nome especialidade', 'Situação', 'Ações']
 
   const toggleVisible = (currentId: number) => {
+    const invisible = <ModalDelete id={id} />
     setVisible(!invisible)
     setId(currentId)
   }
 
-  useEffect(() => {
-    const fetchSpecialties = async () => {
-      const result = await getSpecialties()
-      const formated = result?.reduce((accumulator, currentValue) => {
-        const specialty = {
-          name: currentValue.name,
-          enabled: (
-            <div>
-              <Switch type="switch" checked={currentValue.enabled} />
-              <label>{currentValue.enabled ? 'Ativo' : 'Inativo'}</label>
-            </div>
-          ),
-          actions: (
-            <div>
-              <Link to={`especialidades/visualizar/${currentValue.id}`}>
-                <img src={visualizar} />
-              </Link>
-              <Link to={`especialidades/editar/${currentValue.id}`}>
-                <img src={edit} />
-              </Link>
-              <Link to="" onClick={() => toggleVisible(currentValue.id)}>
-                <img src={delet}></img>
-              </Link>
-            </div>
-          )
-        }
-        return [...accumulator, specialty]
-      }, [] as SpecialtiesRow[])
-      setSpecialties(formated ?? [])
-    }
+  // useEffect(() => {
+  //   const fetchSpecialties = async () => {
+  //     const result = await getSpecialties()
+  //     const formated = result?.reduce((accumulator, currentValue) => {
+  //       const specialty = {
+  //         name: currentValue.name,
+  //         enabled: (
+  //           <div>
+  //             <Switch type="switch" checked={currentValue.enabled} />
+  //             <label>{currentValue.enabled ? 'Ativo' : 'Inativo'}</label>
+  //           </div>
+  //         ),
+  //         actions: (
+  //           <div>
+  //             <Link to={`especialidades/visualizar/${currentValue.id}`}>
+  //               <img src={visualizar} />
+  //             </Link>
+  //             <Link to={`especialidades/editar/${currentValue.id}`}>
+  //               <img src={edit} />
+  //             </Link>
+  //             <Link to="" onClick={() => toggleVisible(currentValue.id)}>
+  //               <img src={delet}></img>
+  //             </Link>
+  //           </div>
+  //         )
+  //       }
+  //       return [...accumulator, specialty]
+  //     }, [] as SpecialtiesRow[])
+  //     setSpecialties(formated ?? [])
+  //   }
 
-    fetchSpecialties()
-  }, [])
+  //   fetchSpecialties()
+  // }, [])
 
   return (
     <>
@@ -88,7 +89,10 @@ const Specialties = () => {
             </Button>
           </Centralizar>
           <TableComponent HeadColumns={tableColumns} BodyRow={specialties} />
-          {invisible && <ModalDelete id={id} />}
+          <Link to="" onClick={() => toggleVisible(id)}>
+            <img src={delet}></img>
+          </Link>
+          <ModalDelete id={id} />
         </Div>
       </Container>
     </>

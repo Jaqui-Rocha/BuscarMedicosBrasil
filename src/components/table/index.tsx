@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
 import { Table, Header, HeaderData } from './styleTable'
-type TableRow = Record<string, string | number | Array<string> | ReactNode>
+type TableRow = Record<string, ReactNode[] | Array<string> | ReactNode>
 
 type HeadColumns = {}
 type TableProps = {
   HeadColumns: string[]
-  BodyRow: string[] | number | ReactNode
+  BodyRow?: TableRow[]
 }
 export const TableComponent = ({ HeadColumns, BodyRow }: TableProps) => {
   return (
@@ -14,12 +14,12 @@ export const TableComponent = ({ HeadColumns, BodyRow }: TableProps) => {
         <Header>
           <tr>
             {HeadColumns.map((columnText, index) => (
-              <th key={`${index}-th`}>{columnText}</th>
+              <HeaderData key={`${index}-th`}>{columnText}</HeaderData>
             ))}
           </tr>
         </Header>
         <tbody>
-          {BodyRow.map((information, index) => {
+          {BodyRow?.map((information, index) => {
             return (
               <>
                 <tr key={`${index}-tr`}>

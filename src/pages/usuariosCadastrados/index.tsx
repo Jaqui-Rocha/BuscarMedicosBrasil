@@ -4,17 +4,27 @@ import 'react-tabs/style/react-tabs.css'
 import { Container, Tab1, Tamanho, H1, Body } from './styled'
 import { useState, useEffect } from 'react'
 import { getUsers } from '@/config/Requisitions'
-// type Props<>= todos | contratantes | medicos {}
+
+import { AiOutlineSearch } from 'react-icons/ai'
+import {
+  Centralizar,
+  Search,
+  Search1,
+  Div
+} from '../Specialties/styleSpecialties'
+;('./styleSpecialties')
+type Props = 'todos' | 'contratantes' | 'medicos'
 export default function UsuarioCadastrado() {
-  const [data, setData] = useState<PropsUsers | null>()
+  const [data, setData] = useState<PropsUsers>()
   useEffect(() => {
     async function usuarioCadastrado() {
       try {
         const resposta = await getUsers()
-        if (data === resposta?.content) {
-          setData(data)
-          console.log(resposta.content)
-        }
+        console.log(resposta)
+        // if (data === resposta.content) {
+        //   setData(data)
+        //   console.log(resposta?.content)
+        // }
       } catch (error) {
         console.log('Erro', error)
       }
@@ -23,7 +33,8 @@ export default function UsuarioCadastrado() {
   }, [])
   return (
     <Container>
-      <H1>Usuários Cadastrados |{}</H1>
+      <H1>Usuários Cadastrados | </H1>
+
       <Tabs>
         <TabList>
           <Tab>
@@ -40,11 +51,22 @@ export default function UsuarioCadastrado() {
         <TabPanel>
           <Tamanho>
             <Body>
+              <Centralizar>
+                <Search placeholder="Pesquise uma palavra-chave" />
+                <Search1>
+                  <AiOutlineSearch />
+                </Search1>
+                <div>
+                  <p>Total de usuários</p>
+                  <h3>1.200</h3>
+                </div>
+              </Centralizar>
               <h2>
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit,
                 consequuntur nostrum nesciunt at amet ut ratione quam aliquid
                 itaque inventore eius laudantium ipsa necessitatibus. Eius quo
                 aliquam explicabo assumenda error!
+                {data?.content.lastName}
               </h2>
             </Body>
           </Tamanho>

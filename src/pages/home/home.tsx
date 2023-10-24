@@ -14,7 +14,7 @@ type UsersRow = {
   profiles: string
 }[]
 export default function Home() {
-  const [users, setUsers] = useState<UsersRow[]>([])
+  const [users, setUsers] = useState<UsersRow[] | any>([])
   const TableColumns = ['Usuário', 'E-mail', 'WhatsApp', 'Tipo de usuário']
 
   useEffect(() => {

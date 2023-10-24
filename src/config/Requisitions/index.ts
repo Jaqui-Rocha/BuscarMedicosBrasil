@@ -77,7 +77,7 @@ export const getUsers = async (page?: number) => {
 }
 export const getSpecialties = async () => {
   try {
-    const result = await instancia.get<PropsSpecialties>('specialties')
+    const result = await instancia.get<PropsSpecialties | null>('specialties')
     return result.data
   } catch (error) {
     console.log('Algo deu errado, tente novamente', error)

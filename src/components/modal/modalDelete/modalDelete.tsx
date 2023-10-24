@@ -63,9 +63,9 @@ export default function ModalDelete({ id }: { id: number }) {
   const FecharModal = (toggleVisible: boolean) => {
     console.log(toggleVisible)
     if (toggleVisible === true) {
-      return
+      setVisible(!invisible)
     }
-    return true
+    return false
   }
 
   async function DeletarSpecialties() {
@@ -84,7 +84,12 @@ export default function ModalDelete({ id }: { id: number }) {
   return (
     <>
       <Container>
-        <Fechar to="" onClick={() => {}}>
+        <Fechar
+          to=""
+          onClick={() => {
+            FecharModal
+          }}
+        >
           <img src={close} />
         </Fechar>
 
@@ -101,7 +106,14 @@ export default function ModalDelete({ id }: { id: number }) {
           <h3>sim, excluir item</h3>
         </Buttom>
 
-        <Link to="">voltar</Link>
+        <Link
+          to=""
+          onClick={() => {
+            FecharModal
+          }}
+        >
+          voltar
+        </Link>
       </Container>
     </>
   )
